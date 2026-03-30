@@ -20,7 +20,7 @@ export function OverviewAnalyticsView() {
   return (
     <DashboardContent maxWidth="xl">
       <Typography variant="h4" sx={{ mb: { xs: 3, md: 5 } }}>
-        Hi, Welcome back 👋
+        Hi, Welcome back Daniel 👋
       </Typography>
 
       <Grid container spacing={3}>
@@ -84,10 +84,10 @@ export function OverviewAnalyticsView() {
             title="Current visits"
             chart={{
               series: [
-                { label: 'America', value: 3500 },
-                { label: 'Asia', value: 2500 },
-                { label: 'Europe', value: 1500 },
-                { label: 'Africa', value: 500 },
+                { label: 'America', value: 1200 },
+                { label: 'Asia', value: 1800 },
+                { label: 'Europe', value: 1000 },
+                { label: 'Africa', value: 900 },
               ],
             }}
           />

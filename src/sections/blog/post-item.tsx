@@ -1,6 +1,7 @@
 import type { CardProps } from '@mui/material/Card';
 import type { IconifyName } from 'src/components/iconify';
 
+import { useNavigate } from 'react-router-dom';
 import { varAlpha } from 'minimal-shared/utils';
 
 import Box from '@mui/material/Box';
@@ -44,6 +45,7 @@ export function PostItem({
   latestPost: boolean;
   latestPostLarge: boolean;
 }) {
+  const navigate = useNavigate();
   const renderAvatar = (
     <Avatar
       alt={post.author.name}
@@ -93,14 +95,21 @@ export function PostItem({
       }}
     >
       {[
-        { number: post.totalComments, icon: 'solar:chat-round-dots-bold' },
-        { number: post.totalViews, icon: 'solar:eye-bold' },
-        { number: post.totalShares, icon: 'solar:share-bold' },
+        { number: post.totalComments, icon: 'solar:chat-round-dots-bold', label: 'comments' },
+        { number: post.totalViews, icon: 'solar:eye-bold', label: 'views' },
+        { number: post.totalShares, icon: 'solar:share-bold', label: 'shares' },
       ].map((info, _index) => (
         <Box
           key={_index}
+          onClick={() => navigate(`/blog/${post.id}/${info.label}`)}
           sx={{
             display: 'flex',
+            cursor: 'pointer',
+            transition: 'all 0.3s ease',
+            '&:hover': {
+              opacity: 0.8,
+              transform: 'scale(1.1)',
+            },
             ...((latestPostLarge || latestPost) && {
               opacity: 0.64,
               color: 'common.white',

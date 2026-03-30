@@ -212,7 +212,7 @@ function renderContent(notification: NotificationItemProps) {
     </Typography>
   );
 
-  if (notification.type === 'order-placed') {
+  if (notification.type == 'order-placed') {
     return {
       avatarUrl: (
         <img
@@ -223,7 +223,7 @@ function renderContent(notification: NotificationItemProps) {
       title,
     };
   }
-  if (notification.type === 'order-shipped') {
+  if (notification.type == 'order-shipped') {
     return {
       avatarUrl: (
         <img

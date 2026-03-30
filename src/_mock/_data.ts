@@ -30,7 +30,7 @@ export const _users = [...Array(24)].map((_, index) => ({
   status: index % 4 ? 'active' : 'banned',
   role:
     [
-      'Leader',
+      'John',
       'Hr Manager',
       'UI Designer',
       'UX Designer',
@@ -50,10 +50,10 @@ export const _posts = [...Array(23)].map((_, index) => ({
   title: _postTitles(index),
   description: _description(index),
   coverUrl: `/assets/images/cover/cover-${index + 1}.webp`,
-  totalViews: 8829,
-  totalComments: 7977,
-  totalShares: 8556,
-  totalFavorites: 8870,
+  totalViews: 3428829,
+  totalComments: 3427977,
+  totalShares: 2138556,
+  totalFavorites: 4408870,
   postedAt: _times(index),
   author: {
     name: _fullName(index),
@@ -187,7 +187,7 @@ export const _notifications = [
     avatarUrl: null,
     type: 'chat-message',
     postedAt: _times(3),
-    isUnRead: false,
+    isUnRead: true,
   },
   {
     id: _id(4),
